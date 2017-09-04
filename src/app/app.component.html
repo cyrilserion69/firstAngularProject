@@ -1,22 +1,23 @@
+<form (ngSubmit)="onSubmit(studForm)" #studForm="ngForm">
 <div>
 
-  <label >Student Number</label> <input type="text" [(ngModel)]="studNo"><br>
-  <label>Student First Name</label> <input type="text" [(ngModel)]="studFname"><br>
-  <label>Student Last Name</label> <input type="text" [(ngModel)]="studLname"><br>
-  <label>Student Program</label> <input type="text" [(ngModel)]="studProg"><br>
-  <label>Student Year</label> <input type="text" [(ngModel)]="studYr"><br>
+  <label >Student Number</label> <input type="text" ngModel name="studNo" #studNo="ngModel" required><br>
+  <label>Student First Name</label> <input type="text" ngModel name="studFname" #studFname="ngModel"><br>
+  <label>Student Last Name</label> <input type="text" ngModel name="studLname" #studLname="ngModel"><br>
+  <label>Student Program</label> <input type="text" ngModel name="studProg" #studProg="ngModel"><br>
+  <label>Student Year</label> <input type="text" ngModel name="studYr" #studYr="ngModel"><br>
 </div>
 
 <div id="options">
 
-  <button id= "addStudents" (click)="addStudentEntry()">
+  <button id= "addStudents" (click)="addStudentEntry()" [disabled]="studForm.invlaid">
     Add Student Entry
   </button>
   <button id= "listStudents" (click)="listStudents()">
     List Students
   </button>
 </div>
-
+</form>
 <div>
 {{message}}
 </div>

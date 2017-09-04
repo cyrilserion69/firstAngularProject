@@ -14,4 +14,8 @@ div#options{
 
 tr:nth-child(even){
 background-color: #c0c0c0;
+
+}
+input.reg-invlaid.ng.touched{
+    border: 1px solid red
 }
